@@ -11,7 +11,7 @@ fileUpload.addEventListener('change', function (event) {
     var formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-
+    document.getElementById('item-image').src = '/images/load2.gif';
     axios({
         url: CLOUDINARY_URL,
         method: "POST",
