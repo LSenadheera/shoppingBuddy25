@@ -47,7 +47,7 @@ router.post('/additem', function (req, res, next) {
         }
         else
         {
-            document.getElementById("item_name").value="asa";
+            //document.getElementById("item_name").value="asa";
            // res.send('success Inserted !');
             res.redirect('/items');
         }
