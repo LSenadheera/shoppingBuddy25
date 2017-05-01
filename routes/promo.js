@@ -15,7 +15,7 @@ router.get('/', function (req,res,next) {
                 .then(function (doc) {
                     array1.push(doc);
                     //console.log(array1);
-                    res.render('promo',{items:array1[0], units:array1[1], interface:"Promotion Management"});
+                    res.render('promo',{items:array1[0], units:array1[1], interface:"Promotion Management", title:"Shopping Buddy | Manage Promotions"});
                     // console.log(array1);
                 });
         });

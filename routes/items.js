@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
             category.find()
                 .then(function (doc4) {
                     arrayItems.push(doc4);
-                    res.render('items', {units: arrayItems[0], categories:arrayItems[1], interface: "Item Management", title: "Item Management"});
+                    res.render('items', {units: arrayItems[0], categories:arrayItems[1], interface: "Item Management", title: "Shopping Buddy | Manage Items"});
                     arrayItems=[];
                   //  console.log(arrayItems);
                 })
