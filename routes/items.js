@@ -40,6 +40,7 @@ router.post('/additem', function (req, res, next) {
     };
 
     var data = new item(newItem);
+    console.log(data);
     data.save(function(err, docs){
         if(err)
         {

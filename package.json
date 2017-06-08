@@ -11,6 +11,7 @@
     "debug": "~2.6.0",
     "express": "~4.14.1",
     "express-handlebars": "^3.0.0",
+    "fast-csv": "^2.4.0",
     "jquery": "^3.2.1",
     "mongoose": "^4.9.5",
     "morgan": "~1.7.0",
@@ -21,7 +22,7 @@
     "node": "v6.10.0",
     "npm": "3.10.10"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/LSenadheera/shoppingBuddy.git"
   }

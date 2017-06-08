@@ -15,6 +15,7 @@ var items =  require('./routes/items');
 var promo = require('./routes/promo');
 var home = require('./routes/home');
 var settings = require('./routes/settings');
+var stock = require('./routes/stock');
 var app = express();
 
 // view engine setup
@@ -40,6 +41,7 @@ app.use('/items', items);
 app.use('/promo', promo);
 app.use('/home', home);
 app.use('/settings', settings);
+app.use('/stock', stock);
 
 
 // catch 404 and forward to error handler

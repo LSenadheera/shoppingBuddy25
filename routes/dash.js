@@ -13,7 +13,7 @@ router.get('/', function (req,res) {
         .then(function(doc) {
             var array2 = doc;
             yoArray.push(doc);
-            console.log(array2[0 ].item);
+            console.log(array2[0].item);
           //  console.log(yoArray);
               //  console.log(docw.item);
                 item.find({code: array2.item})
