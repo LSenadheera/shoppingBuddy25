@@ -30,6 +30,7 @@ router.post('/additem', function (req, res, next) {
     var newItem = {
         name: req.body.item_name,
         desc: req.body.item_desc,
+        category: req.body.item_category,
         code: req.body.item_code,
         brand: req.body.item_brand,
         unit: req.body.item_unit,

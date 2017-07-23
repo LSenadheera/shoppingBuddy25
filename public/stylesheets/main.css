@@ -111,8 +111,8 @@ footer {
   width: 100%;
   position: relative;
   left: 260px; }
-
-@media screen and (max-width: 1024px) {
+/*responsive side bar resolution */
+@media screen and (max-width: 0px) {
   #wrapper .sidebar {
     left: -260px; }
   #wrapper .main {
@@ -179,7 +179,8 @@ html.fullscreen-bg #wrapper {
     .navbar-default .brand {
       padding-left: 30px;
       padding-right: 15px; } }
-  @media screen and (max-width: 992px) {
+/*resposive header resolution*/
+  @media screen and (max-width: 0px) {
     .navbar-default .brand {
       display: none; } }
   @media screen and (max-width: 640px) {
