@@ -9,7 +9,8 @@
 </style>
 <div class="row">
     <div class="col-md-5">
-        <div class="well" style="hei">
+        <div class="well" style="">
+            <h3 align="center">Add New Item</h3>
             <form action="items/additem" method="post" >
             <table>
                 <tr>
@@ -104,7 +105,7 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5" align="center">
         <div class="well">
             Update Item <br>
             <form action="items/get-data" method="get">
@@ -114,16 +115,24 @@
                         Search Item:
                     </td>
                     <td>
-                        <input type="text">
+                        <select name="item_name" id="search_item_name">
+                            {{# each items }}
+                                <article class="item">
+                                    <option value={{this.image}}>  {{this.name}} ({{this.code}})</option>
+
+
+
+                                </article>
+                                <!--<input type="hidden" value="{{this.image}}" id="search_image_src">-->
+                            {{/each}}
+                        </select>
                     </td>
                 </tr>
-                <!--<tr>-->
-                    <!--<td></td>-->
-                    <!--<td>-->
-                        <!--<input type="checkbox">Name-->
-                        <!--<input type="checkbox">Code-->
-                     <!--</td>-->
-                <!--</tr>-->
+<tr>
+  <td colspan="2" align="center">  <img src="" width="130px" id="search_item"> </td>
+    <td><input type="hidden" id="search_value"></td>
+</tr>
+
                 <tr>
                     <td colspan="2" align="center">
 
@@ -137,7 +146,16 @@
     <div class="col-md-4">
         <div class="well">
             Delete<br>
-            Search Item: <input type="text">
+            Search Item: <select name="item_name" id="item_name">
+            {{# each items }}
+                <article class="item">
+                    <option value={{this.code}}>  {{this.name}} ({{this.code}})</option>
+
+
+                </article>
+            {{/each}}
+        </select>
+
             <input type="button" class="btn btn-primary" value="Search">
 
         </div>
@@ -157,14 +175,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
-    $(document).ready(function(){
-        $("#item_category").change(function () {
-            $("#item_code").val(this.value);
-        });
-//        $('#item_category').change(function () {
-//            $('#item_code').val("CR");
+//    $(document).ready(function(){
+//        $("#item_category").change(function () {
+//            $("#item_code").val(this.value);
 //        });
-    });
+////        $('#item_category').change(function () {
+////            $('#item_code').val("CR");
+////        });
+//    });
 
 
 //

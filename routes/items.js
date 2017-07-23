@@ -15,16 +15,18 @@ router.get('/', function(req, res, next) {
     unit.find()
         .then(function(doc) {
             arrayItems.push(doc);
-
             category.find()
                 .then(function (doc4) {
                     arrayItems.push(doc4);
-
                     brand.find()
                         .then(function (doc5) {
                             arrayItems.push(doc5)
-                            console.log(arrayItems[2]);
-                            res.render('items', {units: arrayItems[0], categories:arrayItems[1], brands: arrayItems[2], interface: "Item Management", title: "Shopping Buddy | Manage Items"});
+                            item.find()
+                                .then(function (doc6) {
+                                    arrayItems.push(doc6);
+                                    res.render('items', {units: arrayItems[0], categories:arrayItems[1], brands: arrayItems[2], items:arrayItems[3], interface: "Item Management", title: "Shopping Buddy | Manage Items"});
+                                })
+                            // console.log(arrayItems[2]);
                         });
 
                   // console.log(arrayItems);
