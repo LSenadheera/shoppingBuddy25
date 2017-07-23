@@ -12,24 +12,55 @@
         padding: 6px;
     }
 
+    p{
+        margin-top:0px;
+        margin-bottom: 3px;
+    }
+    .panel-title {
+
+        background-color: #3897da;
+        color: white;
+        padding: 9px;
+    }
 </style>
 
 <div class="row">
 
         {{# each items }}
-        <div class="col-md-2">
-        <div class="well">
+        <div class="col-md-3">
+        <div class="well"  style="height: 270px;">
             <article class="item">
                 <img src="{{this.image}}" width="130">
                 <p>Item: {{ this.name }}</p>
                 <p>Description: {{ this.desc }}</p>
                 <p>Brand: {{ this.brand }}</p>
                 <p>Price: {{ this.price }}</p>
-
+                <p>{{this.category}}</p>
             </article>
         </div>
         </div>
         {{/each}}
-
-
 </div>
+
+<h3 class="panel-title">Electronics</h3>
+<div class="row">
+
+    {{# each items }}
+        <div class="col-md-3">
+            <div class="well"  style="height: 270px;">
+                <article class="item">
+                    <img src="{{this.image}}" width="130">
+                    <p>Item: {{ this.name }}</p>
+                    <p>Description: {{ this.desc }}</p>
+                    <p>Brand: {{ this.brand }}</p>
+                    <p>Price: {{ this.price }}</p>
+                    <p>{{this.category}}</p>
+                </article>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<h3 class="panel-title">Vegetables</h3>
+<h3 class="panel-title">Fruits</h3>
+<h3 class="panel-title">Canned Food</h3>

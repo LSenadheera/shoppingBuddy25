@@ -8,7 +8,7 @@ router.get('/', function (req,res) {
    // res.render('home',{interface: "Ongoing Promotions", title: "Ongoing Promotions"});
    item.find()
         .then(function(doc) {
-            res.render('home', {items: doc, interface: "Available Items", title: "Shopping Buddy | Home"});
+            res.render('home', {items: doc, interface: "Food", title: "Shopping Buddy | Home"});
         });
 });
 
