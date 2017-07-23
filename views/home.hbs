@@ -17,6 +17,7 @@
         margin-bottom: 3px;
     }
     .panel-title {
+        border-radius: 6px;
 
         background-color: #3897da;
         color: white;
@@ -26,16 +27,43 @@
 
 <div class="row">
 
-        {{# each items }}
+        {{# each fruits }}
         <div class="col-md-3">
-        <div class="well"  style="height: 270px;">
+        <div class="well"  style="height: 270px;" align="center">
             <article class="item">
                 <img src="{{this.image}}" width="130">
-                <p>Item: {{ this.name }}</p>
-                <p>Description: {{ this.desc }}</p>
-                <p>Brand: {{ this.brand }}</p>
-                <p>Price: {{ this.price }}</p>
-                <p>{{this.category}}</p>
+                <table align="center">
+                    <tr>
+                        <td><b>Item:</b></td>
+                        <td>{{ this.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Brand: </b>
+                        </td>
+                        <td>
+                            {{ this.brand }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Details: </b>
+                        </td>
+                        <td>
+                            {{ this.desc }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <b>  Price:</b>
+                        </td>
+                        <td>
+                            <p>LKR {{ this.price }}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--<p>{{this.category}}</p>-->
             </article>
         </div>
         </div>
@@ -45,16 +73,42 @@
 <h3 class="panel-title">Electronics</h3>
 <div class="row">
 
-    {{# each items }}
+    {{# each electronics }}
         <div class="col-md-3">
             <div class="well"  style="height: 270px;">
                 <article class="item">
                     <img src="{{this.image}}" width="130">
-                    <p>Item: {{ this.name }}</p>
-                    <p>Description: {{ this.desc }}</p>
-                    <p>Brand: {{ this.brand }}</p>
-                    <p>Price: {{ this.price }}</p>
-                    <p>{{this.category}}</p>
+                    <table align="center">
+                        <tr>
+                            <td><b>Item:</b></td>
+                            <td>{{ this.name }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Brand: </b>
+                            </td>
+                            <td>
+                                {{ this.brand   }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Details: </b>
+                            </td>
+                            <td>
+                                {{ this.desc }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>  Price:</b>
+                            </td>
+                            <td>
+                                <p>LKR {{ this.price }}</p>
+                            </td>
+                        </tr>
+                    </table>
+
                 </article>
             </div>
         </div>

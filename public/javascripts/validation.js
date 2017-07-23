@@ -14,6 +14,7 @@ $(document).ready(function(){
         else {
             if($('#username').val()=="admin" && $('#password').val()=="123"){
                 window.location = '/home';
+
             }else{
                 $("#ermsg").html("Incorrect login details")
                 $("#emsg").show();

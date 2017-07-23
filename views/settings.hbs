@@ -33,14 +33,14 @@
     </form>
 
     <br><br><br>
-    Category:<br>
+    Brands:<br>
     <form action="settings/addbrand" method="post">
         <input type="text" placeholder="New Brand" name="new_item_brand">
         <input type="submit" class="btn btn-primary" value="Add"><br>
         <select name="item_brand">
             {{# each brands }}
                 <article class="brand">
-                    <option value={{this.value}}>  {{this.brand}}</option>
+                    <option value={{this.value}}>  {{this.name}}</option>
 
                 </article>
             {{/each}}

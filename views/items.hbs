@@ -9,7 +9,7 @@
 </style>
 <div class="row">
     <div class="col-md-5">
-        <div class="well">
+        <div class="well" style="hei">
             <form action="items/additem" method="post" >
             <table>
                 <tr>
@@ -46,12 +46,14 @@
                     <!--<td><input type="text" name="item_brand"></td>-->
                     <td>
                         <select>
-                            <option>
-                                Maliban
-                            </option>
-                            <option>Munchee</option>
-                            <option>Fadna</option>
-                            <option>Anchor</option>
+                            {{# each brands }}
+                                <article class="unit">
+                                    <option value={{this.value}}>  {{this.name}}</option>
+
+
+                                </article>
+                            {{/each}}
+
                         </select>
                     </td>
                 </tr>
