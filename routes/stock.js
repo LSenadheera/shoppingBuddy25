@@ -6,7 +6,7 @@ var router = express.Router();
 var item = require('../models/item');
 
 router.get('/', function (req,res) {
-   res.render('stock',{interface:"Upload Stock details", title: "Stock"})
+   res.render('stock',{interface:"Bulk upload items", title: "Bulk upload"})
 });
 
 

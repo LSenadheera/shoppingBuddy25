@@ -4,68 +4,61 @@
 var express = require('express');
 var router = express.Router();
 var unit = require('../models/unit');
-var promotion = require('../models/promotion');
+// var promotion = require('../models/promotion');
 var item = require('../models/item');
+var dailydeal = require('../models/dailydeals');
 router.get('/', function (req,res,next) {
-    var array1 = new Array();
+    // var array1 = new Array();
     item.find()
         .then(function (doc) {
-            array1.push(doc);
-            unit.find()
-                .then(function (doc) {
-                    array1.push(doc);
-                    //console.log(array1);
-                    res.render('promo',{items:array1[0], units:array1[1], interface:"Promotion Management", title:"Shopping Buddy | Manage Promotions"});
-                    // console.log(array1);
+            // array1.push(doc);
+            // unit.find()
+            //     .then(function (doc) {
+            //         array1.push(doc);
+            //         //console.log(array1);
+                    res.render('promo',{items:doc, interface:"Promotion Management", title:"Shopping Buddy | Manage Promotions"});
+                    console.log(doc);
                 });
         });
-});
 
 router.post('/images', function (req,res) {
     item.find({code: req.body.datan})
         .then(function (hut) {
-            var array4=hut;
-            res.send(array4[0].image);
-            console.log(hut);
-    })
-    console.log(req.body.datan);
+            // var array4=hut;
+            res.send(hut);
+            // console.log(hut);
+    });
+    // console.log(req.body.datan);
     //res.send(req.body.data);
 // res.redirect('/home');
 });
 
-router.post('/addPromo', function (req,res) {
-// var image2="";
-//     console.log(req.body.item_name);
-//     item.find({code:req.body.item_name})
-//         .then(function (docimg) {
-//             image2 = docimg[0].image;
-//             console.log(image2);
-//             window.img22=image2;
-//         });
-// console.log(window.img22);
+router.post('/addDailyDeal', function (req,res) {
+    if (req.body.offer_type="dailydeal"){
+        var newDailyDeal = {
+            item: req.body.itemname,
+            startDate: req.body.promo_start_date,
+            endDate: req.body.promo_end_date,
+            promotion: req.body.promotion_desc,
+            image: req.body.pImage,
+            // type: req.body.offer_type,
+            price: req.body.price,
+            newPrice: req.body.newprice,
+            brand: req.body.brand,
+            desc: req.body.desc,
 
-    var newPromotion = {
-
-        item: req.body.item_name,
-        startDate: req.body.promo_start_date,
-        endDate: req.body.promo_end_date,
-        promotion: req.body.promotion_desc,
-        image: req.body.pImage
-
-        
-    };
-
-    var promo = new promotion(newPromotion);
-    promo.save(function(err, docs){
-        if(err)
-        {
-            res.json(err);
-        }
-        else {
-            // res.send('success Inserted !');
-            res.redirect('/promo');
-        }
+        };
+            console.log(req.body);
+        var dailydealData = new dailydeal(newDailyDeal);
+        dailydealData.save(function (err, docs) {
+            if (err){
+                res.json(err);
+            }else{
+                res.redirect('/promo');
+                // console.log(state);
+            }
         });
+    };
 
 });
 

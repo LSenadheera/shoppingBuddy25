@@ -26,6 +26,7 @@ router.get('/', function(req, res, next) {
 
                         });
                             console.log(array5[2]);
+                            array5=[];
                             });
                         });
 

@@ -20,7 +20,7 @@ router.get('/', function (req,res) {
                     .then(function (doce) {
                         yoArray.push(doce)
                            // console.log(yoArray);
-                        console.log(doce);
+                        // console.log(doce);
             });
 
             //

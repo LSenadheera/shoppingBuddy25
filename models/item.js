@@ -12,6 +12,8 @@ var itemSchema = new Schema({
     unit: String,
     price: String,
     image: String,
+    loc_row:String,
+    loc_shelf:String,
 
 },{collection: 'item'});
 

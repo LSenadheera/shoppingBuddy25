@@ -25,6 +25,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LSenadheera/shoppingBuddy.git"
-  }
+    "url": "git+https://github.com/LSenadheera/shoppingBuddy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LSenadheera/shoppingBuddy/issues"
+  },
+  "homepage": "https://github.com/LSenadheera/shoppingBuddy#readme",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

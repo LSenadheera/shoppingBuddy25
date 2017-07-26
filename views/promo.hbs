@@ -1,7 +1,7 @@
 <script src="javascripts/promoImage.js"></script>
 
 <style>
-    input,textarea, select  {
+    input,textarea, select,p  {
         margin: 10px;
     }
 
@@ -9,14 +9,14 @@
         margin-left: 15px;
     }
 </style>
-<div class="row">
-    <div class="col-md-4">
+<div class="row" align="center">
+    <div class="col-md-5">
         <div class="well">
-            <form action="promo/addPromo" method="post">
+            <form action="promo/addDailyDeal" method="post">
             <table>
                 <tr>
                     <td colspan="2" align="center">
-                        <img src="" id="promoImage" width="130">
+                        <img src="" id="promoImage" height="130">
                         <input type="hidden" id="pImage" name="pImage">
                     </td>
                 </tr>
@@ -34,10 +34,18 @@
                     </select></td>
                 </tr>
                 <tr>
+                    <td>
+                        Current Price:
+                    </td>
+                    <td>
+                     <p id="currentprice" name="currentprice"></p>
+                    </td>
+                </tr>
+                <tr>
                     <td>Offer Type:  </td>
                     <td>
-                        <select>
-                            <option value="daily_deal">Daily Deal</option>
+                        <select name="offer_type">
+                            <option value="dailydeal">Daily Deal</option>
                             <option value="promotion">Offers & Promotions</option>
                             <option value="other">Other</option>
                         </select>
@@ -56,18 +64,26 @@
                     <td>Promotion: </td>
                     <td><textarea name="promotion_desc"></textarea></td>
                 </tr>
-
-                <!--<tr>-->
-                <!--<td>Image: </td>-->
-                <!--<td><input type="file"></td>-->
-                <!--</tr>-->
-
+                <tr>
+                    <td>
+                        New Price: LKR
+                    </td>
+                    <td>
+                        <input type="text" id="newprice" name="newprice" >
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="2" align="center">
                         <input type="submit" class="btn btn-primary" value="Add Promotion"></td>
                 </tr>
 
             </table>
+                <input type="hidden" id="brand" name="brand">
+                <input type="hidden" id="desc" name="desc">
+                <input type="hidden" id="price" name="price">
+                <input type="hidden" id="itemname" name="itemname">
+
+
             </form>
 
         </div>
@@ -79,48 +95,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-//    $(document).ready(function(){
-//        $("#item_name").change(function () {
-//
-//            var newT = document.getElementById('#item_name').value();
-//                    console.log(newT);
-//                }
-//            );
-//
-////            $("#item_code").val(this.value);
-////        $('#item_category').change(function () {
-////            $('#item_code').val("CR");
-////        });
-//    });
-//var promoImage = document.getElementById('item_name');
-//var fileUpload = document.getElementById('item-image-upload');
-
-// promoImage.addEventListener('change', function (event) {
-//var file = event.target.files[0];
-//var formData = new FormData();
-//formData.append('file', file);
-//formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 $(document).ready(function() {
     $("#item_name").change(function () {
         var data = $(this).val();
-        //console.log(data);
              $.post('/promo/images', {datan: data}, function (res) {
-//            console.log(res);
-                 document.getElementById('promoImage').src = res;
-                 document.getElementById('pImage').value = res;
+//                 console.log(data);
+                 document.getElementById('promoImage').src = res[0].image;
+                 document.getElementById('pImage').value = res[0].image;
+                 document.getElementById('currentprice').innerHTML="LKR "+res[0].price;
+                 document.getElementById('currentprice').value=res[0].price;
+                 document.getElementById('brand').value=res[0].brand;
+                 document.getElementById('desc').value=res[0].desc;
+                 document.getElementById('price').value=res[0].price;
+                 document.getElementById('itemname').value=res[0].name;
+//                 console.log(res[0].price);
         });
-//        axios({
-//            url: '/promo/images/',
-//            method: 'POST',
-//            headers: {'contentType': 'application/json'},
-//            data: JSON.stringify({number: 1})
 
         });
 
     });
-
-
-
-    //
 
 </script>

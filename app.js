@@ -20,7 +20,11 @@ var home = require('./routes/home');
 var settings = require('./routes/settings');
 var stock = require('./routes/stock');
 var offerSelect = require('./routes/offerSelect');
+var dailydeals = require("./routes/dailydeals");
+
 var app = express();
+
+
 
 // view engine setup
 app.engine('.hbs', expressHbs({
@@ -47,7 +51,7 @@ app.use('/home', home);
 app.use('/settings', settings);
 app.use('/stock', stock);
 app.use('/offerSelect', offerSelect);
-
+app.use('/dailydeals', dailydeals);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -23,98 +23,109 @@
         color: white;
         padding: 9px;
     }
+
+   .head-title{
+        visibility: hidden;
+    }
 </style>
-
-<div class="row">
-
-        {{# each fruits }}
-        <div class="col-md-3">
-        <div class="well"  style="height: 270px;" align="center">
-            <article class="item">
-                <img src="{{this.image}}" width="130">
-                <table align="center">
-                    <tr>
-                        <td><b>Item:</b></td>
-                        <td>{{ this.name }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Brand: </b>
-                        </td>
-                        <td>
-                            {{ this.brand }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <b>Details: </b>
-                        </td>
-                        <td>
-                            {{ this.desc }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <b>  Price:</b>
-                        </td>
-                        <td>
-                            <p>LKR {{ this.price }}</p>
-                        </td>
-                    </tr>
-                </table>
-
-                <!--<p>{{this.category}}</p>-->
-            </article>
-        </div>
-        </div>
-        {{/each}}
-</div>
 
 <h3 class="panel-title">Electronics</h3>
 <div class="row">
+{{# each electronics}}
+    <div class="col-md-3">
+        <div class="well"  style="height: 200px;">
+            <article class="item">
+                <img src="{{this.image}}" height="120"><br>
+                {{this.brand}} {{this.desc}} {{this.name}}
+                <p> <b>LKR {{this.price}} </b></p>
+            </article>
+        </div>
+    </div>
+{{/each}}
+</div>
+<br>
 
-    {{# each electronics }}
+<h3 class="panel-title">Vegetables</h3>
+<div class="row">
+    {{# each vegetables}}
         <div class="col-md-3">
-            <div class="well"  style="height: 270px;">
+            <div class="well"  style="height: 200px;">
                 <article class="item">
-                    <img src="{{this.image}}" width="130">
-                    <table align="center">
-                        <tr>
-                            <td><b>Item:</b></td>
-                            <td>{{ this.name }}</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Brand: </b>
-                            </td>
-                            <td>
-                                {{ this.brand   }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Details: </b>
-                            </td>
-                            <td>
-                                {{ this.desc }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>  Price:</b>
-                            </td>
-                            <td>
-                                <p>LKR {{ this.price }}</p>
-                            </td>
-                        </tr>
-                    </table>
-
+                    <img src="{{this.image}}" height="120"><br>
+                    {{this.brand}} {{this.desc}} {{this.name}}
+                    <p> <b>LKR {{this.price}} </b></p>
                 </article>
             </div>
         </div>
     {{/each}}
 </div>
+<br>
 
-<h3 class="panel-title">Vegetables</h3>
 <h3 class="panel-title">Fruits</h3>
-<h3 class="panel-title">Canned Food</h3>
+<div class="row">
+    {{# each fruits}}
+        <div class="col-md-3">
+            <div class="well"  style="height: 200px;">
+                <article class="item">
+                    <img src="{{this.image}}" height="120"><br>
+                    {{this.brand}} {{this.desc}} {{this.name}}
+                    <p> <b>LKR {{this.price}} </b></p>
+                </article>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<br>
+
+<h3 class="panel-title">Beverages</h3>
+<div class="row">
+    {{# each beverages}}
+        <div class="col-md-3">
+            <div class="well"  style="height: 200px;">
+                <article class="item">
+                    <img src="{{this.image}}" height="120"><br>
+                    {{this.brand}} {{this.desc}} {{this.name}}
+                    <p> <b>LKR {{this.price}} </b></p>
+                </article>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<br>
+
+
+
+<h3 class="panel-title">Personal</h3>
+<div class="row">
+    {{# each personal}}
+        <div class="col-md-3">
+            <div class="well"  style="height: 200px;">
+                <article class="item">
+                    <img src="{{this.image}}" height="120"><br>
+                    {{this.brand}} {{this.desc}} {{this.name}}
+                    <p> <b>LKR {{this.price}} </b></p>
+                </article>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<br>
+
+
+<h3 class="panel-title">Paper</h3>
+<div class="row">
+    {{# each paper}}
+        <div class="col-md-3">
+            <div class="well"  style="height: 200px;">
+                <article class="item">
+                    <img src="{{this.image}}" height="120"><br>
+                    {{this.brand}} {{this.desc}} {{this.name}}
+                    <p> <b>LKR {{this.price}} </b></p>
+                </article>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<br>
+
+

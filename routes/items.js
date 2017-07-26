@@ -3,17 +3,18 @@
  */
 var express = require('express');
 var router = express.Router();
-//var multer = require('multer');
-//var upload = multer({dest: 'public/images/uploads/'});
 var unit = require('../models/unit');
 var item = require('../models/item');
 var category = require('../models/category');
 var brand = require('../models/brand');
 var arrayItems = new Array();
-
+// var query = require('url');
+// var swal = require('sweetalert');
 router.get('/', function(req, res, next) {
+    // var id = query.status;
+    // console.log(id);
     unit.find()
-        .then(function(doc) {
+        .then(function (doc) {
             arrayItems.push(doc);
             category.find()
                 .then(function (doc4) {
@@ -24,45 +25,54 @@ router.get('/', function(req, res, next) {
                             item.find()
                                 .then(function (doc6) {
                                     arrayItems.push(doc6);
-                                    res.render('items', {units: arrayItems[0], categories:arrayItems[1], brands: arrayItems[2], items:arrayItems[3], interface: "Item Management", title: "Shopping Buddy | Manage Items"});
+                                    res.render('items', {
+                                        units: arrayItems[0],
+                                        categories: arrayItems[1],
+                                        brands: arrayItems[2],
+                                        items: arrayItems[3],
+                                        interface: "Item Management",
+                                        title: "Shopping Buddy | Manage Items"
+                                    });
                                 })
-                            // console.log(arrayItems[2]);
+
                         });
 
-                  // console.log(arrayItems);
-                   // arrayItems=[];
-                })
+                });
         });
-});
 
 
-router.post('/additem', function (req, res, next) {
-    var newItem = {
-        name: req.body.item_name,
-        desc: req.body.item_desc,
-        category: req.body.item_category,
-        code: req.body.item_code,
-        brand: req.body.item_brand,
-        unit: req.body.item_unit,
-        price: req.body.item_price,
-        image: req.body.item_image
+    router.post('/deleteitem',function (req,res,next) {
+       var del_item = req.body.del_item;
+       item.remove({_id:"5974ca101a19ce0011e4c93e"});
+       console.log(del_item);
+       res.redirect('/items');
+    });
+
+    router.post('/additem', function (req, res, next) {
+        var newItem = {
+            name: req.body.item_name,
+            desc: req.body.item_desc,
+            category: req.body.item_category,
+            code: req.body.item_code,
+            brand: req.body.item_brand,
+            unit: req.body.item_unit,
+            price: req.body.item_price,
+            image: req.body.item_image,
 
 
-    };
 
-    var data = new item(newItem);
-    console.log(data);
-    data.save(function(err, docs){
-        if(err)
-        {
-            res.json(err);
-        }
-        else
-        {
-            //document.getElementById("item_name").value="asa";
-           // res.send('success Inserted !');
-            res.redirect('/items');
-        }
+        };
+
+        var data = new item(newItem);
+        console.log(data);
+        data.save(function (err, docs) {
+            if (err) {
+                res.json(err);
+            }
+            else {
+                res.send("<html><script>window.confirm('sometext');window.location='http://localhost:3000/items'</script></html>");
+            }
+        });
     });
 });
 
