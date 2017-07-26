@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
                 res.json(err);
             }
             else {
-                res.send("<html><script>window.confirm('Item added successfully');window.location='http://localhost:3000/items'</script></html>");
+                res.send("<html><script>alert('Item added successfully');window.location='http://localhost:3000/items'</script></html>");
             }
         });
     });
