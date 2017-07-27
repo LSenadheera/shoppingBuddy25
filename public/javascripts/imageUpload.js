@@ -15,12 +15,13 @@ itemUpdate.addEventListener('change', function (event) {
     // var searchItem = document.getElementById('search_item_name').value
    var searchItem = itemUpdate.value;
   document.getElementById('search_item').src=document.getElementById('search_item_name').value;
-   // console.log(search_value.value);
+   // console.log(searchItem);
 
 
 });
 
 fileUpload.addEventListener('change', function (event) {
+    console.log("changed event");
     var file = event.target.files[0];
     var formData = new FormData();
     formData.append('file', file);

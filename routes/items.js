@@ -10,6 +10,14 @@ var brand = require('../models/brand');
 var arrayItems = new Array();
 // var query = require('url');
 // var swal = require('sweetalert');
+// router.post('/update', function (req,res) {
+//     item.find({code: req.body.updateitem})
+//         .then(function (data1) {
+//             res.send(data1);
+//         });
+// });
+
+
 router.get('/', function(req, res, next) {
     // var id = query.status;
     // console.log(id);
@@ -40,13 +48,6 @@ router.get('/', function(req, res, next) {
                 });
         });
 
-
-    router.post('/deleteitem',function (req,res,next) {
-       var del_item = req.body.del_item;
-       item.remove({_id:"5974ca101a19ce0011e4c93e"});
-       console.log(del_item);
-       res.redirect('/items');
-    });
 
     router.post('/additem', function (req, res, next) {
         var newItem = {
@@ -82,3 +83,11 @@ module.exports = router;
 /**
  * Created by Lahiru Senadheera on 4/4/2017.
  */
+router.post('/update', function (req,res) {
+    // console.log(req.body);
+    item.find({code: req.body.updatevalue})
+        .then(function (doc9) {
+            res.send(doc9);
+            console.log(doc9);
+        });
+});

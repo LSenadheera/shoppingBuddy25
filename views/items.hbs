@@ -9,11 +9,11 @@
 </style>
 
 <!--<div class="row" style="margin: 0px;">-->
-    <!--<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" align="center">-->
-        <!--<div class="alert alert-success" style=" position: absolute; top: -70px;z-index: 1" id="smsg">-->
-            <!--<strong>Item added Successfully!</strong>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" align="center">-->
+<!--<div class="alert alert-success" style=" position: absolute; top: -70px;z-index: 1" id="smsg">-->
+<!--<strong>Item added Successfully!</strong>-->
+<!--</div>-->
+<!--</div>-->
 
 <!--</div>-->
 
@@ -25,143 +25,143 @@
         <div class="well" style="">
             <h3 align="center">Add New Item</h3>
             <form action="items/additem" method="post" >
-            <table>
-                <tr>
-                    <td>Item Name: </td>
-                    <td><input type="text" name="item_name" required ></td>
-                </tr>
+                <table>
+                    <tr>
+                        <td>Item Name: </td>
+                        <td><input type="text" name="item_name" required ></td>
+                    </tr>
 
-                <tr>
-                    <td>Description:  </td>
-                    <td><textarea name="item_desc"></textarea></td>
-                </tr>
+                    <tr>
+                        <td>Description:  </td>
+                        <td><textarea name="item_desc"></textarea></td>
+                    </tr>
 
-                <tr>
-                    <td>Category: </td>
-                    <td>
-                        <select name="item_category" id="item_category">
-                            {{# each categories }}
-                                <article class="category">
-                                    <option value={{this.value}}>  {{this.name}}</option>
-                                </article>
-                            {{/each}}
+                    <tr>
+                        <td>Category: </td>
+                        <td>
+                            <select name="item_category" id="item_category">
+                                {{# each categories }}
+                                    <article class="category">
+                                        <option value={{this.value}}>  {{this.name}}</option>
+                                    </article>
+                                {{/each}}
 
-                        </select>
-                    </td>
-                </tr>
+                            </select>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>Item Code: </td>
-                    <td><input type="text" name="item_code" id="item_code"></td>
-                </tr>
+                    <tr>
+                        <td>Item Code: </td>
+                        <td><input type="text" name="item_code" id="item_code"></td>
+                    </tr>
 
-                <tr>
-                    <td>Brand: </td>
-                    <!--<td><input type="text" name="item_brand"></td>-->
-                    <td>
-                        <select id="item_brand" name="item_brand">
-                            {{# each brands }}
-                                <article class="unit">
-                                    <option value={{this.value}}>  {{this.name}}</option>
-
-
-                                </article>
-                            {{/each}}
-
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Unit: </td>
-                    <td>
-                        <select name="item_unit">
-                            {{# each units }}
-                                <article class="unit">
-                                    <option value={{this.value}}>  {{this.name}}</option>
+                    <tr>
+                        <td>Brand: </td>
+                        <!--<td><input type="text" name="item_brand"></td>-->
+                        <td>
+                            <select id="item_brand" name="item_brand">
+                                {{# each brands }}
+                                    <article class="unit">
+                                        <option value={{this.value}}>  {{this.name}}</option>
 
 
-                                </article>
-                            {{/each}}
+                                    </article>
+                                {{/each}}
 
-                            <option value="lt">Litres</option>
-                            <option value="nos">NOS</option>
-                        </select>
-                    </td>
-                </tr>
+                            </select>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>Price: (LKR) </td>
-                    <td><input type="text" name="item_price">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Location (Row)</td>
-                    <td>
-                        <select id="loc_row" name="loc_row">
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
-                            <option>F</option>
-                            <option>G</option>
-                            <option>H</option>
-                            <option>I</option>
-                            <option>J</option>
-                            <option>K</option>
-                            <option>L</option>
-                            <option>M</option>
-                            <option>N</option>
-                            <option>O</option>
-                            <option>P</option>
-                            <option>Q</option>
-                            <option>R</option>
-                            <option>S</option>
-                            <option>T</option>
-                            <option>U</option>
-                            <option>V</option>
-                            <option>W</option>
-                            <option>X</option>
-                            <option>Y</option>
-                            <option>Z</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Location (Shlef)</td>
-                    <td>
-                        <select id="loc_shelf" name="loc_shelf">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Image: </td>
-                    <td><input type="file" id="item-image-upload"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><img src="" id="item-image" width="150px"> </td>
-
-                </tr>
-
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" class="btn btn-primary" value="Add Item"></td>
-                </tr>
+                    <tr>
+                        <td>Unit: </td>
+                        <td>
+                            <select name="item_unit">
+                                {{# each units }}
+                                    <article class="unit">
+                                        <option value={{this.value}}>  {{this.name}}</option>
 
 
-            </table>
+                                    </article>
+                                {{/each}}
+
+                                <option value="lt">Litres</option>
+                                <option value="nos">NOS</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Price: (LKR) </td>
+                        <td><input type="text" name="item_price">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location (Row)</td>
+                        <td>
+                            <select id="loc_row" name="loc_row">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                                <option>G</option>
+                                <option>H</option>
+                                <option>I</option>
+                                <option>J</option>
+                                <option>K</option>
+                                <option>L</option>
+                                <option>M</option>
+                                <option>N</option>
+                                <option>O</option>
+                                <option>P</option>
+                                <option>Q</option>
+                                <option>R</option>
+                                <option>S</option>
+                                <option>T</option>
+                                <option>U</option>
+                                <option>V</option>
+                                <option>W</option>
+                                <option>X</option>
+                                <option>Y</option>
+                                <option>Z</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location (Shlef)</td>
+                        <td>
+                            <select id="loc_shelf" name="loc_shelf">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Image: </td>
+                        <td><input type="file" id="item-image-upload"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><img src="" id="item-image" width="150px"> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" class="btn btn-primary" value="Add Item"></td>
+                    </tr>
+
+
+                </table>
                 <input type="hidden" name="item_image" id="item_image" value="">
             </form>
         </div>
@@ -170,58 +170,178 @@
 
     <div class="col-md-5" align="center">
         <div class="well">
-            Update Item <br>
-            <form action="items/get-data" method="get">
-            <table>
-                <tr>
-                    <td>
-                        Search Item:
-                    </td>
-                    <td>
-                        <select name="item_name" id="search_item_name">
-                            {{# each items }}
-                                <article class="item">
-                                    <option value={{this.image}}>  {{this.name}} ({{this.code}})</option>
+          <h3>Update Item</h3>   <br>
+            <form action="" method="get">
+                <table>
+                    <tr>
+                        <td>
+                            Search Item:
+                        </td>
+                        <td>
+                            <select name="search_item_name" id="search_item_name">
+                                {{# each items }}
+                                    <article class="item">
+                                        <option value={{this.code}}>  {{this.name}} ({{this.code}})</option>
 
 
 
-                                </article>
-                                <!--<input type="hidden" value="{{this.image}}" id="search_image_src">-->
-                            {{/each}}
-                        </select>
-                    </td>
-                </tr>
-<tr>
-  <td colspan="2" align="center">  <img src="" width="130px" id="search_item"> </td>
-    <td><input type="hidden" id="search_value"></td>
-</tr>
+                                    </article>
+                                    <!--<input type="hidden" value="{{this.image}}" id="search_image_src">-->
+                                {{/each}}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">  <img src="" width="130px" id="search_item"> </td>
+                        <td><input type="hidden" id="search_value"></td>
+                    </tr>
 
-                <tr>
-                    <td colspan="2" align="center">
+                    <tr>
+                        <td>Item Name: </td>
+                        <td><input type="text" name="update_item_name" id="update_item_name" required ></td>
+                    </tr>
 
-                        <input type="button" class="btn btn-primary" value="Search">
+                    <tr>
+                        <td>Description:  </td>
+                        <td><textarea name="update_item_desc" id="update_item_desc"></textarea></td>
+                    </tr>
 
-                    </td>
-                </tr>
-            </table>
+                    <tr>
+                        <td>Category: </td>
+                        <td>
+                            <select name="update_item_category" id="update_item_category">
+                                {{# each categories }}
+                                    <article class="category">
+                                        <option value={{this.value}}>  {{this.name}}</option>
+                                    </article>
+                                {{/each}}
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Item Code: </td>
+                        <td><input type="text" name="update_item_code" id="update_item_code"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Brand: </td>
+                        <!--<td><input type="text" name="item_brand"></td>-->
+                        <td>
+                            <select id="update_item_brand" name="update_item_brand">
+                                {{# each brands }}
+                                    <article class="unit">
+                                        <option value={{this.value}}>  {{this.name}}</option>
+
+
+                                    </article>
+                                {{/each}}
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Unit: </td>
+                        <td>
+                            <select name="update_item_unit" id="update_item_unit">
+                                {{# each units }}
+                                    <article class="unit">
+                                        <option value={{this.value}}>  {{this.name}}</option>
+
+
+                                    </article>
+                                {{/each}}
+
+                                <option value="lt">Litres</option>
+                                <option value="nos">NOS</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Price: (LKR) </td>
+                        <td><input type="text" name="update_item_price" id="update_item_price">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location (Row)</td>
+                        <td>
+                            <select id="update_loc_row" name="update_loc_row">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                                <option>G</option>
+                                <option>H</option>
+                                <option>I</option>
+                                <option>J</option>
+                                <option>K</option>
+                                <option>L</option>
+                                <option>M</option>
+                                <option>N</option>
+                                <option>O</option>
+                                <option>P</option>
+                                <option>Q</option>
+                                <option>R</option>
+                                <option>S</option>
+                                <option>T</option>
+                                <option>U</option>
+                                <option>V</option>
+                                <option>W</option>
+                                <option>X</option>
+                                <option>Y</option>
+                                <option>Z</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location (Shlef)</td>
+                        <td>
+                            <select id="update_loc_shelf" name="update_loc_shelf">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+
+                            <input type="button" class="btn btn-primary" value="Update">
+
+                        </td>
+                    </tr>
+                </table>
         </div>
     </div>
-</form>
+    </form>
     <div class="col-md-4">
         <form action="items/deleteitem" method="post">
-        <div class="well">
-            Delete<br>
-            Search Item: <select name="del_item" id="del_item">
-            {{# each items }}
-                <article class="item">
-                    <option value={{this.code}}>  {{this.name}} ({{this.code}})</option>
-                </article>
-            {{/each}}
-        </select>
+            <div class="well">
+                Delete<br>
+                Search Item: <select name="del_item" id="del_item">
+                {{# each items }}
+                    <article class="item">
+                        <option value={{this.code}}>  {{this.name}} ({{this.code}})</option>
+                    </article>
+                {{/each}}
+            </select>
 
-            <input type="submit" class="btn btn-primary" value="Delete" >
+                <input type="submit" class="btn btn-primary" value="Delete" >
 
-        </div>
+            </div>
     </div>
     </form>
 </div>
@@ -239,18 +359,50 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
-//    $(document).ready(function(){
-//        $("#item_category").change(function () {
-//            $("#item_code").val(this.value);
-//        });
-////        $('#item_category').change(function () {
-////            $('#item_code').val("CR");
-////        });
-//    });
+    //    $(document).ready(function(){
+    //        $("#item_category").change(function () {
+    //            $("#item_code").val(this.value);
+    //        });
+    ////        $('#item_category').change(function () {
+    ////            $('#item_code').val("CR");
+    ////        });
+    //    });
 
 
-//
+    //
+    $(document).ready(function() {
+        $("#search_item_name").change(function () {
+            var data2 = $(this).val();
+            $.post('/items/update', {updatevalue: data2}, function (res) {
+//                 console.log(newdata1);
+                document.getElementById('search_item').src = res[0].image;
+
+                document.getElementById('update_item_name').value = res[0].name;
+                document.getElementById('update_item_desc').value = res[0].desc;
+                document.getElementById('update_item_category').value = res[0].category;
+                document.getElementById('update_item_code').value = res[0].code;
+                document.getElementById('update_item_brand').value = res[0].brand;
+                document.getElementById('update_item_unit').value = res[0].unit;
+                document.getElementById('update_item_price').value = res[0].price;
+                document.getElementById('update_loc_row').value = res[0].loc_row;
+                document.getElementById('update_loc_shelf').value = res[0].loc_shelf;
+
+
+//                document.getElementById('currentprice').innerHTML="LKR "+res[0].price;
+//                document.getElementById('currentprice').value=res[0].price;
+//                document.getElementById('brand').value=res[0].brand;
+//                document.getElementById('desc').value=res[0].desc;
+//                document.getElementById('price').value=res[0].price;
+//                document.getElementById('itemname').value=res[0].name;
+//                 console.log(res[0]);
+            });
+
+        });
+    });
+
+
 
 
 
 </script>
+

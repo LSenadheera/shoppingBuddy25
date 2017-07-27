@@ -35,22 +35,26 @@ router.get('/', function (req,res) {
                                                                 item.find({"category":"Meat"})
                                                                     .then(function (doc) {
                                                                         array22.push(doc);
-                                                                        res.render('home', {
-                                                                            categories: array22[0],
-                                                                            electronics: array22[1],
-                                                                            vegetables: array22[2],
-                                                                            fruits: array22[3],
-                                                                            beverages: array22[4],
-                                                                            personal: array22[5],
-                                                                            paper: array22[6],
-                                                                            biscuits: array22[7],
-                                                                            meats: array22[8],
+                                                                        item.find({"category": "Other"})
+                                                                            .then(function (doc) {
+                                                                                array22.push(doc);
+                                                                                res.render('home', {
+                                                                                    categories: array22[0],
+                                                                                    electronics: array22[1],
+                                                                                    vegetables: array22[2],
+                                                                                    fruits: array22[3],
+                                                                                    beverages: array22[4],
+                                                                                    personal: array22[5],
+                                                                                    paper: array22[6],
+                                                                                    biscuits: array22[7],
+                                                                                    meats: array22[8],
+                                                                                    others: array22[9],
 
-                                                                            title: "Shopping Buddy | Home"
-                                                                        });
+                                                                                    title: "Shopping Buddy | Home"
+                                                                                });
 
+                                                                            });
                                                                     });
-
                                                     });
 
                                             });
