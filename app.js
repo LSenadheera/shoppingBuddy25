@@ -21,7 +21,7 @@ var settings = require('./routes/settings');
 var stock = require('./routes/stock');
 var offerSelect = require('./routes/offerSelect');
 var dailydeals = require("./routes/dailydeals");
-
+var offerpromo = require('./routes/offerpromo');
 var app = express();
 
 
@@ -52,6 +52,7 @@ app.use('/settings', settings);
 app.use('/stock', stock);
 app.use('/offerSelect', offerSelect);
 app.use('/dailydeals', dailydeals);
+app.use('/offerpromo', offerpromo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

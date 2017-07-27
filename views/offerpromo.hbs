@@ -1,13 +1,13 @@
+
 <div class="row">
 
-    {{# each dailydeals }}
+    {{# each promotions }}
         <div class="col-md-3" >
             <div class="well" align="center">
                 <article class="">
                     <img src="{{this.image}}" width="130"><br><br>
-                        {{this.brand}} {{this.desc}} {{ this.item }} <br>
+                    {{this.brand}} {{this.desc}} {{ this.item }} <br>
                     <p style="color: #2bb24c"><b>{{this.promotion}}</b></p>
-                    <p>From {{this.startDate}} <br>To {{this.endDate}}</p>
                     <p><strike>LKR{{this.price}}</strike>
                         <font style="color: red" size="4"><b> LKR  {{this.newPrice}} </b></font></p>
 

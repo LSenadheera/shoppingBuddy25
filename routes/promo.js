@@ -7,30 +7,21 @@ var unit = require('../models/unit');
 // var promotion = require('../models/promotion');
 var item = require('../models/item');
 var dailydeal = require('../models/dailydeals');
+var offerpromo = require('../models/offer_promo');
+
 router.get('/', function (req,res,next) {
-    // var array1 = new Array();
     item.find()
         .then(function (doc) {
-            // array1.push(doc);
-            // unit.find()
-            //     .then(function (doc) {
-            //         array1.push(doc);
-            //         //console.log(array1);
                     res.render('promo',{items:doc, interface:"Promotion Management", title:"Shopping Buddy | Manage Promotions"});
-                    console.log(doc);
+                    // console.log(doc);
                 });
         });
 
 router.post('/images', function (req,res) {
     item.find({code: req.body.datan})
         .then(function (hut) {
-            // var array4=hut;
             res.send(hut);
-            // console.log(hut);
     });
-    // console.log(req.body.datan);
-    //res.send(req.body.data);
-// res.redirect('/home');
 });
 
 router.post('/addDailyDeal', function (req,res) {
@@ -48,17 +39,45 @@ router.post('/addDailyDeal', function (req,res) {
             desc: req.body.desc,
 
         };
-            console.log(req.body);
         var dailydealData = new dailydeal(newDailyDeal);
         dailydealData.save(function (err, docs) {
             if (err){
                 res.json(err);
             }else{
-                res.redirect('/promo');
+
+                // res.send("<html><script>alert('Promotion added successfully');window.location='/promo'</script></html>");
+
+                console.log("state");
+            }
+        });
+    } if(req.body.offer_type="promotion"){
+
+        // res.redirect('/home');
+        var newOfferPromo = {
+            item: req.body.itemname,
+            startDate: req.body.promo_start_date,
+            endDate: req.body.promo_end_date,
+            promotion: req.body.promotion_desc,
+            image: req.body.pImage,
+            // type: req.body.offer_type,
+            price: req.body.price,
+            newPrice: req.body.newprice,
+            brand: req.body.brand,
+            desc: req.body.desc,
+
+        };
+        var offerpromoData = new offerpromo(newOfferPromo);
+        offerpromoData.save(function (err, docs) {
+            if (err){
+                res.json(err);
+            }else{
+                res.send("<html><script>alert('Promotion added successfully');window.location='/promo'</script></html>");
+
                 // console.log(state);
             }
         });
     };
+
 
 });
 
