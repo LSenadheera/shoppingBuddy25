@@ -12,8 +12,10 @@ router.get('/', function (req,res) {
 
 router.post('/upload', function (req,res) {
   var fileName = req.body.fileUp;
-    console.log("C:/Users/Lahiru Senadheera/Desktop/"+fileName);
-  var flPath = "C:/"+fileName;
+    console.log(fileName);
+  var flPath = "C:/Book1.csv";
+  // var flPath = "C:/Users/Lahiru Senadheera/Desktop/"+fileName;
+  //   console.log(document.getElementById("fileUp").value);
     var csv = require("fast-csv");
     array1 = Array();
     csv
@@ -40,7 +42,8 @@ router.post('/upload', function (req,res) {
         .on("end", function(){
             console.log("done");
         });
-res.redirect('/home');
+    res.send("<html><script>alert('Uploaded successfully');window.location='/home'</script></html>");
+
 });
 
 
