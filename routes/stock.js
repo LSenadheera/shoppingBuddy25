@@ -13,7 +13,7 @@ router.get('/', function (req,res) {
 router.post('/upload', function (req,res) {
   var fileName = req.body.fileUp;
     console.log("C:/Users/Lahiru Senadheera/Desktop/"+fileName);
-  var flPath = "C:/Users/Lahiru Senadheera/Desktop/"+fileName;
+  var flPath = "C:/"+fileName;
     var csv = require("fast-csv");
     array1 = Array();
     csv
